@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Agenda</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="calendar">
+    <header>
+      <button id="prev">‹</button>
+      <h1 id="monthYear"></h1>
+      <button id="next">›</button>
+    </header>
+
+    <!-- VUES -->
+    <div class="views">
+      <button data-view="day">Jour</button>
+      <button data-view="week">Semaine</button>
+      <button data-view="month" class="active">Mois</button>
+    </div>
+
+    <div class="weekdays" id="weekdays">
+      <div>Lun</div><div>Mar</div><div>Mer</div>
+      <div>Jeu</div><div>Ven</div><div>Sam</div><div>Dim</div>
+    </div>
+
+    <div id="days" class="days"></div>
+  </div>
+
+  <!-- MODAL (inchangé) -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitle">Nouvel événement</h2>
+
+      <input id="title" placeholder="Titre">
+      <input id="time" type="time">
+      <textarea id="desc" placeholder="Description"></textarea>
+
+      <div class="drawing-wrapper">
+        <canvas id="drawingCanvas" width="220" height="140"></canvas>
+        <button id="clearDrawing" class="secondary">Effacer le dessin</button>
+      </div>
+
+      <button id="save">Enregistrer</button>
+      <button id="delete" class="danger hidden">Supprimer</button>
+      <button id="close">Annuler</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
